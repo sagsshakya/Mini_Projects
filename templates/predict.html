@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask tutorial - Prediction</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<br><br>
+	<h2 id = "Prediction">Prediction Engine</h2><br>    
+    
+    <div class="predict">    
+	    <div class="categorical-variables">
+	    	<h3 id="categorical-variables"><b>CATEGORICAL VARIABLES</b></h3>
+	    	<hr>
+
+		    <form id="categorical-variables-form" method="POST" action="{{ url_for("predict_income") }}">    
+		        
+		        <label for="Workclass">
+		        	<b>Workclass</b>    
+		        </label>
+		        <br>	
+				
+				<select name="WORKCLASS" id="Workclass" placeholder = "Workclass">
+				  <option value="Private">Private</option>
+				  <option value="govt_employees">Government Employee</option>
+				  <option value="self_employed">Self Employed</option>
+				  <option value="Without-pay">Without pay</option>
+				  <option value="Never-worked">Never Worked</option>
+				</select>
+		        <br><br>    
+		        
+		        <label for="Education">
+		        	<b>Education</b>    
+		        </label>
+		        <br>	
+				<select name="EDUCATION" id="Education" placeholder = "Education">
+				  <option value="HS-grad">High School Graduate</option>
+				  <option value="Some-college">Some College</option>
+				  <option value="Bachelors">Bachelors</option>
+				  <option value="Masters">Masters</option>
+				  <option value="Assoc-voc">Associate Voc</option>
+				  <option value="elementary_school">Elementary School</option>
+				  <option value="Assoc-acdm">Associate Academic</option>
+				  <option value="Prof-school">Professor School</option>
+				  <option value="Doctorate">Doctorate</option>
+				  <option value="Preschool">Preschool</option>
+				</select>
+		        <br><br>   
+
+		        <label for="Marital-status">
+		        	<b>Marital-status</b>    
+		        </label>
+		        <br>	
+				
+				<select name="MARITAL-STATUS" id="Marital-status" placeholder = "Marital-status">
+				  <option value="Married">Married</option>
+				  <option value="Never-married">Never married</option>				 
+				  <option value="Separated">Separated</option>
+				  <option value="Widowed">Widowed</option>
+				</select>
+		        <br><br>    
+
+		        <label for="Occupation">
+		        	<b>Occupation</b>    
+		        </label>
+		        <br>	
+				
+				<select name="OCCUPATION" id="Occupation" placeholder = "Occupation">
+				  <option value="Prof-specialty">Prof-specialty</option>
+				  <option value="Craft-repair">Craft-repair</option>
+				  <option value="Exec-managerial">Executive-managerial</option>
+				  <option value="Adm-clerical">Admin-clerical</option>
+				  <option value="Sales">Sales</option>
+				  <option value="Machine-op-inspct">Machine operation inspector</option>
+				  <option value="Transport-moving">Transport-moving</option>
+				  <option value="Handlers-cleaners">Handlers-cleaners</option>
+				  <option value="Farming-fishing">Farming-fishing</option>
+				  <option value="Tech-support">Tech-support</option>
+				  <option value="Protective-serv">Protective services</option>
+				  <option value="Priv-house-serv">Private house service</option>
+				  <option value="Armed-Forces">Armed Forces</option>
+				  <option value="Other-service">Other service</option>
+
+				</select>
+		        <br><br>    
+
+		        <label for="Country"><b>Country</b></label>
+		        <br>
+
+		        <select name = "COUNTRY" id="Country" placeholder = "Country">
+		        	<option value="United-States">United-States</option>
+					<option value="Mexico">Mexico</option>
+					<option value="Philippines">Philippines</option>
+					<option value="Germany">Germany</option>
+					<option value="Puerto-Rico">Puerto-Rico</option>
+					<option value="Canada">Canada</option>
+					<option value="El-Salvador">El-Salvador</option>
+					<option value="India">India</option>
+					<option value="Cuba">Cuba</option>
+					<option value="England">England</option>
+					<option value="China">China</option>
+					<option value="South">South</option>
+					<option value="Jamaica">Jamaica</option>
+					<option value="Italy">Italy</option>
+					<option value="Dominican-Republic">Dominican-Republic</option>
+					<option value="Japan">Japan</option>
+					<option value="Guatemala">Guatemala</option>
+					<option value="Poland">Poland</option>
+					<option value="Vietnam">Vietnam</option>
+					<option value="Columbia">Columbia</option>
+					<option value="Haiti">Haiti</option>
+					<option value="Portugal">Portugal</option>
+					<option value="Taiwan">Taiwan</option>
+					<option value="Iran">Iran</option>
+					<option value="Greece">Greece</option>
+					<option value="Nicaragua">Nicaragua</option>
+					<option value="Peru">Peru</option>
+					<option value="Ecuador">Ecuador</option>
+					<option value="France">France</option>
+					<option value="Ireland">Ireland</option>
+					<option value="Hong">Hong</option>
+					<option value="Thailand">Thailand</option>
+					<option value="Cambodia">Cambodia</option>
+					<option value="Trinadad&Tobago">Trinadad&Tobago</option>
+					<option value="Laos">Laos</option>
+					<option value="Yugoslavia">Yugoslavia</option>
+					<option value="Outlying-US(Guam-USVI-etc)">Outlying-US(Guam-USVI-etc)</option>
+					<option value="Scotland">Scotland</option>
+					<option value="Honduras">Honduras</option>
+					<option value="Hungary">Hungary</option>
+					<option value="Holand-Netherlands">Holand-Netherlands</option>
+		        </select>
+		        <br><br>
+
+		        <label for="Race"><b>Race</b></label>
+		        <br>
+		        <select name="RACE" id="race">
+		        	<option value="Black">Black</option>
+					<option value="White">White</option>
+					<option value="Asian-Pac-Islander">Asian-Pac-Islander</option>
+					<option value="Other">Other</option>
+					<option value="Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+		        </select>
+		        <br><br>
+
+		        <label for="Gender"><b>Gender</b></label>
+		        <br>
+		        <select name = "GENDER" id="Gender">
+		        	<option value="Male">Male</option>
+					<option value="Female">Female</option>
+		        </select>
+		        <br><br>
+		        
+		        <h3 id="numeric-variables"><b>NUMERIC VARIABLES</b></h3>
+	    		<hr>
+
+	    		<label for="Age">
+		        	<b>Age</b>    
+		        </label>
+		        <br>
+		        <input type="text" name="AGE" placeholder="[Integer]">	
+		        <br><br>
+				
+		        <label for="Hours per week">
+		        	<b>Hours-per-Week</b>    
+		        </label>
+		        <br>
+		        <input type="text" name="HOURS-PER-WEEK" placeholder="[Float]">	
+		        <br><br>
+			
+				<label for="Capital Gain">
+		        	<b>Capital Gain</b>    
+		        </label>
+		        <br>
+		        <input type="text" name="CAPITAL-GAIN" placeholder="[Integer]">	
+		        <br><br>
+
+		        <label for="Capital Loss">
+		        	<b>Capital Loss</b>    
+		        </label>
+		        <br>
+		        <input type="text" name="CAPITAL-LOSS" placeholder="[Integer]">	
+		        <br><br>
+				
+
+		        <button type="submit" name="SUBMIT" id="submit" value="Submit" onclick="showInput()"> Submit </button>      
+		        <br><br>
+
+		    </form>
+
+		    <br>
+
+		    <div id="display-result" class="display" style="color: #17202a; text-align: center; font-family: Trebuchet MS; font-size: 18px;">
+		    	<b>Your income is {{prediction}}.</b>
+		    </div>
+
+	    </div>
+	</div>         
+</body>
+</html>
