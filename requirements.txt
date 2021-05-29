@@ -58,7 +58,6 @@ greenlet @ file:///C:/ci/greenlet_1611958565931/work
 h5py==2.10.0
 HeapDict==1.0.1
 html5lib @ file:///tmp/build/80754af9/html5lib_1593446221756/work
-idna @ file:///home/linux1/recipes/ci/idna_1610986105248/work
 imagecodecs @ file:///C:/ci/imagecodecs_1617996768495/work
 imageio @ file:///tmp/build/80754af9/imageio_1617700267927/work
 imagesize @ file:///home/ktietz/src/ci/imagesize_1611921604382/work
